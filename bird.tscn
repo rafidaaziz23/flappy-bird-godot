@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctoql7iflggm5"]
+
+[ext_resource type="Script" uid="uid://c4t1p128tjsjq" path="res://player.gd" id="1_cchwj"]
+[ext_resource type="Texture2D" uid="uid://bkp63cly08amu" path="res://sprites/bluebird-midflap.png" id="1_j88tq"]
+[ext_resource type="Texture2D" uid="uid://22pat4xam3it" path="res://sprites/bluebird-upflap.png" id="2_cchwj"]
+[ext_resource type="Texture2D" uid="uid://bi3n12h4w05db" path="res://sprites/bluebird-downflap.png" id="3_6ljjq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6ljjq"]
+radius = 16.0
+height = 32.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_axl6x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_j88tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_cchwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6ljjq")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 8.0
+}]
+
+[node name="Player" type="Node2D"]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("1_cchwj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CapsuleShape2D_6ljjq")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+sprite_frames = SubResource("SpriteFrames_axl6x")
+animation = &"fly"
+frame_progress = 0.597944

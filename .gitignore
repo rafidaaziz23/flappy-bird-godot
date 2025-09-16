@@ -1,0 +1,13 @@
+# Godot-specific ignores
+.godot/
+
+# Import metadata
+*.import
+
+# Exported binaries
+export_presets.cfg
+*.binary
+
+# Mono-specific ignores
+.mono/
+mono_glue.tres

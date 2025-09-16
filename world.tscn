@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://b67us2jc6mj3b"]
+
+[ext_resource type="Script" uid="uid://cmej0xpyduyr5" path="res://world.gd" id="1_aqk2v"]
+[ext_resource type="Texture2D" uid="uid://ni7iralrmh1o" path="res://sprites/background-day.png" id="1_fj7yv"]
+[ext_resource type="Texture2D" uid="uid://bgs5giksg03p0" path="res://sprites/base.png" id="2_tlwt5"]
+[ext_resource type="PackedScene" uid="uid://ctoql7iflggm5" path="res://bird.tscn" id="3_tlwt5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqk2v"]
+size = Vector2(1153.5, 111)
+
+[node name="World" type="Node2D"]
+script = ExtResource("1_aqk2v")
+
+[node name="Background4" type="Sprite2D" parent="."]
+position = Vector2(-121, 325)
+scale = Vector2(1.2618, 1.26051)
+texture = ExtResource("1_fj7yv")
+
+[node name="Background3" type="Sprite2D" parent="."]
+position = Vector2(969, 324)
+scale = Vector2(1.26613, 1.26581)
+texture = ExtResource("1_fj7yv")
+
+[node name="Background2" type="Sprite2D" parent="."]
+position = Vector2(243, 323)
+scale = Vector2(1.26491, 1.26426)
+texture = ExtResource("1_fj7yv")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(606, 325)
+scale = Vector2(1.26736, 1.26736)
+texture = ExtResource("1_fj7yv")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+
+[node name="GroundSprite" type="Sprite2D" parent="Ground"]
+position = Vector2(574.5, 594)
+scale = Vector2(3.45536, 1)
+texture = ExtResource("2_tlwt5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+position = Vector2(576.75, 593)
+shape = SubResource("RectangleShape2D_aqk2v")
+
+[node name="Player" parent="." instance=ExtResource("3_tlwt5")]
+position = Vector2(534, 316)
+
+[node name="PipeSpawnTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="PipeSpawnTimer" to="." method="_on_pipe_spawn_timer_timeout"]
