@@ -2,11 +2,6 @@
 
 A simple, classic Flappy Bird game clone built from scratch using the Godot Engine and GDScript. This project serves as an excellent introduction to the core concepts of 2D game development.
 
-![Gameplay Screenshot](./gameplay.png)
-_(**Pro Tip:** Take a screenshot of your game running, name it `gameplay.png`, and place it in your project's root folder to make this image appear!)_
-
----
-
 ## 📋 Table of Contents
 
 - [About This Project](#about-this-project)
@@ -57,7 +52,7 @@ You must have the Godot Engine (version 4.0 or newer) installed on your machine.
 
 1.  **Clone the repository:**
     ```sh
-    git clone [https://github.com/YOUR_USERNAME/flappy-bird-godot.git](https://github.com/YOUR_USERNAME/flappy-bird-godot.git)
+    git clone git@github.com:rafidaaziz23/flappy-bird-godot.git
     ```
 2.  **Open the Godot Engine Project Manager.**
 3.  Click the **Import** button and navigate to the folder where you cloned the repository.
